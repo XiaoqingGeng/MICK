@@ -33,6 +33,7 @@ parser.add_argument('--pretrain', type=str, default=None, help='Pretrained model
 parser.add_argument('--dataset', type=str, default='xx', help='Dataset name')
 parser.add_argument('--use_sup_cost', type=int, default=0, help='Use support cost or not')
 parser.add_argument('--gpu_idx', type=int, default=0, help='Gpu idx')
+parser.add_argument('--language', type=str, default='eng', help='language')
 
 
 args = parser.parse_args()
@@ -50,7 +51,7 @@ max_length = args.max_length
 #./data/health_meta/word_vec.json
 print('./data/' + args.dataset+'/train.json')
 
-if args.dataset.find('FewRel')>=0:
+if args.language == 'eng':
     wordvec = "./data/glove.6B.50d.json"
     word_dim=50
 else:
