@@ -38,6 +38,7 @@ python3 train_demo.py --N "#relation classes in test set" --trainN 5 --K 1 --Q 1
 ```
 cd SNAIL
 python3 train_demo.py --N "#relation classes in test set" --trainN 5 --K 1 --Q 1 --model gnn --encoder cnn --max_length 80 --train "data_source_folder"/train --test "data_source_folder"/test --val "data_source_folder"/test --val_step 1000 --batch_size 1 --save_ckpt "save checkpoint" --language chn --sup_cost 1 --load_ckpt "pretrained model if any"  
+```
 
 ## Data
 Our proposed TinyRel-CM dataset in data/.
