@@ -64,10 +64,10 @@ if args.use_sup_cost:
 else:
     train_data_loader = JSONFileDataLoader('./data/' + args.dataset+'/train.json', wordvec, max_length=max_length, reprocess=False)
 val_data_loader = JSONFileDataLoader('./data/' + args.dataset+'/test.json', wordvec, max_length=max_length, reprocess=False)
-deploy_data_loader = JSONFileDataLoader('./data/' + args.dataset+'/deploy.json', wordvec, max_length=max_length, reprocess=False)
+# deploy_data_loader = JSONFileDataLoader('./data/' + args.dataset+'/deploy.json', wordvec, max_length=max_length, reprocess=False)
 
 
-framework = FewShotREFramework(train_data_loader, val_data_loader, val_data_loader, deploy_data_loader)
+framework = FewShotREFramework(train_data_loader, val_data_loader, val_data_loader, val_data_loader)
 
 model = MLMAN(train_data_loader.word_vec_mat, max_length, word_embedding_dim=word_dim, hidden_size=100, args=args, N=args.N_for_train)
 model_name = args.model_name + str(seed)
