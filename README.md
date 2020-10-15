@@ -5,7 +5,6 @@
 * pytorch = 0.3.1 for SNAIL
 
 ## Getting Started
-
 * Train MLMAN
 ```
 cd MLMAN_Proto
@@ -41,4 +40,16 @@ python3 train_demo.py --N "#relation classes in test set" --trainN 5 --K 1 --Q 1
 ```
 
 ## Data
-Our proposed TinyRel-CM dataset in data/.
+* Our proposed TinyRel-CM dataset in data/.
+* To run models on dataset, the dataset folder should contain a "train.json", a "test.json" and a "rel2id.json".
+  "train.json" and "test.json" files should look like:
+  {"relation class name":[
+	{"h":["head_entity_name", "head_entity_id", "head_entity_pos"],
+	 "t":["tail_entity_name", "tail_entity_id", "tail_entity_pos"],
+	 "tokens": [tokens in the sentence]},
+	...
+	],
+  ...
+  }
+  
+  An example is shown in data/DISEASE\_DISEASE\_example, where group DISEASE-DISEASE is regarded as test set.
